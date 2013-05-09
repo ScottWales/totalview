@@ -1,8 +1,9 @@
 all:helloworld segfault
 
 FC=mpif90
-FFLAGS+=-O2 -g 
+FFLAGS+=-O0 -g -traceback
 FFLAGS+=-warn all -warn errors
+FFLAGS+=-fpe=0
 
 %.o:%.f90
 	$(FC) $(FFLAGS) -c $< -o $@
